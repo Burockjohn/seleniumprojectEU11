@@ -15,7 +15,7 @@ import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class T3_getAttribute_CssSelector {
+public class T3_getAttribute_cssSelector {
 
     public static void main(String[] args) {
 
