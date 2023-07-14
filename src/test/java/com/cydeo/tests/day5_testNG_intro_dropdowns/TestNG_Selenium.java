@@ -43,7 +43,6 @@ public class TestNG_Selenium {
         String expectedTitle = "Google";
 
         Assert.assertEquals(actualTitle,expectedTitle, "Title is not matching here." );
-        //BREAK UNTIL 3.09PM CST
     }
 
 }
