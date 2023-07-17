@@ -45,7 +45,7 @@ public class T1_WindowHandling {
         }
 
         //5. Assert: Title contains “Etsy”
-        Assert.assertEquals("Etsy", driver.getTitle());
+        Assert.assertTrue(driver.getTitle().contains("Etsy"));
     }
 
     @AfterMethod
