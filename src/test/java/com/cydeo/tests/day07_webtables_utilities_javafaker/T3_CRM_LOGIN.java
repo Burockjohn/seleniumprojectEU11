@@ -9,10 +9,6 @@ import org.testng.annotations.Test;
 
 public class T3_CRM_LOGIN extends TestBase {
 
-
-
-
-
     //TC #3: Login scenario
     @Test
     public void crm_login_test(){
