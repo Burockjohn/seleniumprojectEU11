@@ -25,6 +25,10 @@ public class T3_Actions_Hover {
         WebElement user2= Driver.getDriver().findElement(By.xpath("//h5[text()='name: user2']"));
         WebElement user3= Driver.getDriver().findElement(By.xpath("//h5[text()='name: user3']"));
 
+        WebElement viewProfile1 = Driver.getDriver().findElement(By.xpath("//div[@class='figcaption']/a[1]"));
+        WebElement viewProfile2 = Driver.getDriver().findElement(By.xpath("(//div[@class='figcaption'])[2]/a"));
+        WebElement viewProfile3 = Driver.getDriver().findElement(By.xpath("(//div[@class='figcaption'])[3]/a"));
+
         Actions actions = new Actions(Driver.getDriver());
 
         //2. Hover over to first image
@@ -34,6 +38,7 @@ public class T3_Actions_Hover {
         //3. Assert:
         //a. “name: user1” is displayed
         Assert.assertTrue(user1.isDisplayed());
+        Assert.assertTrue(viewProfile1.isDisplayed());
 
         //4. Hover over to second image
         BrowserUtils.sleep(2);
@@ -42,6 +47,7 @@ public class T3_Actions_Hover {
         //5. Assert:
         //a. “name: user2” is displayed
         Assert.assertTrue(user2.isDisplayed());
+        Assert.assertTrue(viewProfile2.isDisplayed());
 
         //6. Hover over to third image
         BrowserUtils.sleep(2);
@@ -50,8 +56,8 @@ public class T3_Actions_Hover {
         //7. Confirm:
         //a. “name: user3” is displayed
         Assert.assertTrue(user3.isDisplayed());
+        Assert.assertTrue(viewProfile3.isDisplayed());
 
-        //BREAK UNTIL 3.13PM CST
     }
 
 }
