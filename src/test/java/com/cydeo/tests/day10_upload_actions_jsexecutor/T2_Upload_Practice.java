@@ -15,7 +15,7 @@ public class T2_Upload_Practice {
         Driver.getDriver().get("https://practice.cydeo.com/upload");
 
         //2. Find some small file from your computer, and get the path of it.
-        String path = "C:\\Users\\brkcn\\OneDrive\\Masaüstü\\Profil.jpg";
+        String path = "C:/Users/brkcn/OneDrive/Masaüstü/Profil.jpg"; // For windows, either double backward "\\" or single forward "/" works.
         WebElement selectFile = Driver.getDriver().findElement(By.cssSelector("input#file-upload"));
         selectFile.sendKeys(path);
 
