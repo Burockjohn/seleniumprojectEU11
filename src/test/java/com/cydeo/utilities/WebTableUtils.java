@@ -45,5 +45,12 @@ public class WebTableUtils {
 
     }
 
+    public static void getTableGetEmail(WebDriver driver, String tableNum, String firstName) {
+
+        System.out.println(driver.findElement(By.xpath("//table[@id='table" + tableNum + "']//td[.='" + firstName + "']/following-sibling::td[1]")).getText());
+
+
+    }
+
 
 }
