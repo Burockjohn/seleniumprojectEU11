@@ -37,7 +37,7 @@ public class T1_WindowHandling {
 
         //4. Create a logic to switch to the tab where Etsy.com is open
         //5. Assert: Title contains “Etsy”
-        BrowserUtils.switchWindowAndVerify(driver,"etsy","Etsy");
+        BrowserUtils.switchWindowAndVerify(driver, "etsy", "Etsy");
 
     }
 
