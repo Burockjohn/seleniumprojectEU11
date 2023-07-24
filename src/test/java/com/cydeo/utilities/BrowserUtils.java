@@ -7,8 +7,12 @@ In this class only general utility methods that are not related to some specific
 */
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -29,7 +33,7 @@ public class BrowserUtils {
     }
 
 
-    public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl, String expectedInTitle){
+    public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl, String expectedInTitle) {
 
         /*
 
@@ -49,7 +53,7 @@ public class BrowserUtils {
 
             System.out.println("Current URL: " + driver.getCurrentUrl());
 
-            if (driver.getCurrentUrl().contains(expectedInUrl)){
+            if (driver.getCurrentUrl().contains(expectedInUrl)) {
                 break;
             }
         }
@@ -60,23 +64,22 @@ public class BrowserUtils {
     }
 
 
-    public static void verifyTitle(WebDriver driver ,String expectedTitle){
+    public static void verifyTitle(WebDriver driver, String expectedTitle) {
 
-    //This method accepts a String "expectedTitle" and Asserts if it is true
+        //This method accepts a String "expectedTitle" and Asserts if it is true
 
         Assert.assertEquals(driver.getTitle(), expectedTitle);
 
     }
 
-    /*public static void waitForInvisibilityOf(WebElement webElement){
 
-    //Creating a utility method for ExplicitWait, so we don't have to repeat the lines
+    public static void waitForInvisibilityOf(WebElement webElement) {
+        //Creating a utility method for ExplicitWait, so we don't have to repeat the lines
 
         //Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOf(webElement));
     }
 
-     */
 
 }
