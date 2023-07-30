@@ -1,7 +1,10 @@
 package com.cydeo.tests.day13_review_and_practices;
 
 import com.cydeo.pages.DoubleClickPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,7 +12,7 @@ import org.testng.annotations.Test;
 public class T1_DoubleClick {
 
     @Test
-    public void t1_double_click_test(){
+    public void t1_double_click_test() {
         //1. Goto
         //https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2
         Driver.getDriver().get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2");
@@ -30,6 +33,22 @@ public class T1_DoubleClick {
         String expectedInStyleAttribute = "red";
 
         Assert.assertTrue(actualStyleAttributeValue.contains(expectedInStyleAttribute));
+
+    }
+
+    @Test
+    public void dragDropTest() {
+        Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+        WebElement target = Driver.getDriver().findElement(By.xpath("//div[@id='droptarget']"));
+        WebElement source = Driver.getDriver().findElement(By.xpath("//div[@id='draggable']"));
+        Driver.getDriver().findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
+        Actions actions = new Actions(Driver.getDriver());
+        BrowserUtils.sleep(3);
+        actions.dragAndDrop(source, target).perform();
+
+        Assert.assertEquals("You did great!", target.getText());
+
+        Driver.closeDriver();
 
     }
 
