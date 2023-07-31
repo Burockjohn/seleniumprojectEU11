@@ -46,6 +46,7 @@ public class T1_DoubleClick {
         BrowserUtils.sleep(3);
         actions.dragAndDrop(source, target).perform();
 
+
         Assert.assertEquals("You did great!", target.getText());
 
         Driver.closeDriver();
